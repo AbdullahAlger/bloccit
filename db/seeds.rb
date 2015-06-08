@@ -24,7 +24,17 @@ posts = Post.all
   )
 end
 
+50.times do
+  Advertisement.create!(
+    title: Faker::Commerce.product_name,
+    copy: Faker::Company.name,
+    price: Faker::Commerce.price
+  )
+end
+
 Post.where(title: "A sample post", body: "I don't know what to say. It's a sample post!").first_or_create
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+puts "#{Advertisement.count} advertisements created"
+
