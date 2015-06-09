@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   #
   # get 'posts/edit'
 
+  #resources :posts
   resources :posts
-
   # get 'welcome/index'
   #
   # get 'welcome/about'
