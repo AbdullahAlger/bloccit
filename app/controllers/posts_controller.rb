@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  skip_before_action :flash_attack, :only => [:index, :new]
+  #skip_before_action :flash_attack, :only => [:index, :new]
 
   def index
     @posts = Post.all
@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    authorize @post
   end
 
   def create
@@ -19,6 +20,7 @@ class PostsController < ApplicationController
     # it is initializing a new post associated with the current user, and passing a hash
     # of post-specific, filtered params as the initialized argument
     @post = current_user.posts.build(params.require(:post).permit(:title, :body))
+    authorize @post
     if @post.save
       flash[:notice] = "Post was saved."
       redirect_to @post
@@ -30,10 +32,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    authorize @post
   end
 
   def update
     @post = Post.find(params[:id])
+    authorize @post
     if @post.update_attributes(params.require(:post).permit(:title, :body))
       flash[:notice] = "Post was updated."
       redirect_to @post
