@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610113301) do
+ActiveRecord::Schema.define(version: 20150610210820) do
 
   create_table "advertisements", force: :cascade do |t|
     t.string   "title"
@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20150610113301) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
-    t.integer  "questions_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "answers", ["questions_id"], name: "index_answers_on_questions_id"
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(version: 20150610113301) do
     t.boolean  "resolved"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "public"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

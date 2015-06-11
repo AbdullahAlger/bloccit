@@ -2,11 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :questions
-  # get 'advertisement/index'
-  #
-  # get 'advertisement/show'
 
-  resources :advertisement
+  resources :advertisements
 
   # get 'posts/index'
   #
