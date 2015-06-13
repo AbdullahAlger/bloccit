@@ -16,7 +16,7 @@ require "faker"
 end
 topics = Topic.all
 
-5.times do
+3.times do
   user = User.new(
       name: Faker::Name.name,
       email: Faker::Internet.email,
