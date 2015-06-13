@@ -1,12 +1,6 @@
 class PostPolicy < ApplicationPolicy
 
   class Scope < Scope
-    attr_reader :user, :scope
-
-    def initialize(user, scope)
-      @user, @scope = user, scope
-    end
-
     def resolve
       if user.admin? || user.moderator?
         scope.all
