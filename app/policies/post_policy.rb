@@ -2,10 +2,10 @@ class PostPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      if  user.present? && (user.admin? || user.moderator?)
+      if user.present? && (user.admin? || user.moderator?)
         scope.all
       else
-        scope.where(:user => user) # using just id doesn't work. Had to use user_id.
+        scope.where(:user => user)
       end
     end
    end

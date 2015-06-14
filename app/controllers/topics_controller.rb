@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+
   def index
     @topics = Topic.all
     authorize @topics
@@ -23,6 +24,7 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(params.require(:topic).permit(:name, :description, :public))
     authorize @topic
+
     if @topic.save
       redirect_to @topic, notice: "Topic was saved successfully."
     else
@@ -34,6 +36,7 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     authorize @topic
+
     if @topic.update_attributes(params.require(:topic).permit(:name, :description, :public))
       redirect_to @topic
     else
