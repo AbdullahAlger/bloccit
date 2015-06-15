@@ -10,7 +10,7 @@
       <% if  @post.summary.nil? %>
         <%= link_to "Make Summary", new_topic_post_summary_path(@topic, @post), class: "btn btn-success" %>
       <% else %>
-        <%= link_to "See Summary", topic_post_summary_path(@topic, @post, @post.summary), class: "btn btn-success" %>
+        <%= link_to "See Summary", topic_post_summary_path(@topic, @post), class: "btn btn-success" %>
       <% end %>
     <% end %>
   </div>
