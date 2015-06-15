@@ -38,6 +38,13 @@ end
 
 posts = Post.all
 
+# 50.times do
+#   Summary.create!(
+#     description: Faker::Lorem.paragraph,
+#     post: posts.sample
+#   )
+# end
+
 100.times do
   Comment.create!(
     #user: users.sample,
@@ -85,5 +92,6 @@ puts "#{User.count} users created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
 puts "#{Advertisement.count} advertisements created"
+puts "#{Summary.count} summaries created"
 
 

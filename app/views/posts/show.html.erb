@@ -7,6 +7,11 @@
   <div class="col-md-4">
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: "btn btn-success" %>
+      <% if  @post.summary.nil? %>
+        <%= link_to "Make Summary", new_topic_post_summary_path(@topic, @post), class: "btn btn-success" %>
+      <% else %>
+        <%= link_to "See Summary", topic_post_summary_path(@topic, @post, @post.summary), class: "btn btn-success" %>
+      <% end %>
     <% end %>
   </div>
 </div>
