@@ -10,4 +10,8 @@ class CommentPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def destory?
+    user.present? && (record.user == user || user.admin? || user.moderator?)
+  end
 end

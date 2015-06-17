@@ -1,9 +1,8 @@
 <% if current_user %>
-  <h2>Add a comment:</h2>
+  Add a comment:
   <%= form_for [@topic, @post, @post.comments.build] do |f| %>
     <div class="form-group">
-      <%= f.label :body %>
-      <%= f.text_field :body, placeholder: "Enter comment" %>
+      <%= f.text_field :body, class: "form-control", placeholder: "Enter comment" %>
     </div>
     <div class="form-group">
       <%= f.submit "Save Comment", class: "btn btn-success" %>
