@@ -67,6 +67,9 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails', '~> 3.0'
+
+  gem 'binding_of_caller'
+  gem 'better_errors'
 end
 
 group :production do
