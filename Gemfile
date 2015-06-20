@@ -72,7 +72,7 @@ group :development, :test do
   gem 'better_errors'
 
   gem 'capybara'
-  
+
 end
 
 group :production do

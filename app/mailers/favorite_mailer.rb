@@ -1,4 +1,4 @@
-class FavoriteMailer < ApplicationMailer::Base
+class FavoriteMailer < ActionMailer::Base
 
   default from: "abdullahalger@me.com"
 
