@@ -35,9 +35,7 @@
 <div class="row">
   <div class="col-md-8">
     <h4>Comments:</h4>
-    <% @comments.each do |comment| %>
-      <p><%= render partial: "comments/comment", locals: { comment: comment } %></p>
-    <% end %>
+    <p><%= render partial: "comments/comment", collection: @comments %></p>
     <p><%= render partial: "comments/form", locals: { post: @post, comment: @comment } %></p>
   </div>
 </div>
