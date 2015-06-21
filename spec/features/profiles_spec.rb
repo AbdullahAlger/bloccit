@@ -25,4 +25,19 @@ describe "Visiting profiles" do
 
   end
 
+  describe "user signed in" do
+
+    before do
+      login_as(:user, :scope => :user)
+    end
+
+    it "should show the user's profile" do
+      visit user_path(@user)
+      expect(current_path).to eq(user_path(@user))
+    end
+
+
+
+  end
+
 end
