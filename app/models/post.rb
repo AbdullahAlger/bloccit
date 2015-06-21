@@ -60,6 +60,4 @@ class Post < ActiveRecord::Base
     (redcarpet.render markdown).html_safe
   end
 
-
-
 end
