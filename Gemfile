@@ -47,7 +47,6 @@ gem 'mini_magick'
 gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
 gem 'newrelic_rpm'
-gem 'factory_girl_rails', '~4.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -74,6 +73,9 @@ group :development, :test do
   gem 'better_errors'
 
   gem 'capybara'
+
+  gem 'factory_girl_rails', '~> 4.0'
+
 
 end
 
