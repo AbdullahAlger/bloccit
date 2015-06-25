@@ -28,15 +28,17 @@ describe "Visiting profiles" do
   describe "user signed in" do
 
     before do
-      login_as(:user, :scope => :user)
+      login_as(create(:user, role: "admin"), scope: :user)
     end
 
     it "should show the user's profile" do
       visit user_path(@user)
       expect(current_path).to eq(user_path(@user))
+
+      expect(page).to have_content(@user.name)
+      expect(page).to have_content(@post.title)
+      expect(page).to have_content(@comment.body)
     end
-
-
 
   end
 
