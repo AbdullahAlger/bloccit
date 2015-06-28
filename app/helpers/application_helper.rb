@@ -12,17 +12,17 @@ module ApplicationHelper
   end
 
   def up_vote_link_classes(post)
+    css = "glyphicon glyphicon-chevron-up "
     vote = current_user.voted(post)
-    if vote && vote.up_vote?
-      "voted"
-    end
+    vote && vote.up_vote? ? css += "voted" : ""
+    css
   end
 
   def down_vote_link_classes(post)
+    css = "glyphicon glyphicon-chevron-down "
     vote = current_user.voted(post)
-    if vote && vote.down_vote?
-      "voted"
-    end
+    vote && vote.down_vote? ? css += "voted" : ""
+    css
   end
 
 end
